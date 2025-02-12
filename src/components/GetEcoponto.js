@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/get-ecoponto.css';
 import locations from '../ecopontos.json';
@@ -7,6 +7,7 @@ const GetEcoponto = () => {
   const [nearestLocation, setNearestLocation] = useState(null);
   const [nearestDistance, setNearestDistance] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [loadingMessage, setLoadingMessage] = useState('');
 
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371; // Raio da Terra em km
@@ -19,7 +20,12 @@ const GetEcoponto = () => {
     return R * c;
   };
 
-  useEffect(() => {
+  const findNearestLocation = () => {
+    setLoadingMessage("Buscando o Ecoponto mais próximo...");
+    setNearestLocation(null);
+    setNearestDistance(null);
+    setErrorMessage(null);
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         const userLat = position.coords.latitude;
@@ -38,19 +44,26 @@ const GetEcoponto = () => {
 
         setNearestLocation(nearestLoc);
         setNearestDistance(nearestDist);
+        setLoadingMessage('');
       }, error => {
         setErrorMessage("Não foi possível obter a localização do usuário.");
+        setLoadingMessage('');
       });
     } else {
       setErrorMessage("Geolocalização não é suportada pelo navegador.");
+      setLoadingMessage('');
     }
-  }, []);
+  };
 
   return (
     <div className='get-ecoponto'>
       <h1>Encontre o Ecoponto<br />mais próximo de você:</h1>
-      <button onClick={() => { /* Força o efeito */ }}>Buscar Ecoponto</button>
+      <button onClick={findNearestLocation}>Buscar Ecoponto</button>
       <div className='ecoponto-info'>
+        {loadingMessage && <p>
+          {loadingMessage}
+          <div className='loader'></div>
+          </p>}
         {errorMessage && <p>{errorMessage}</p>}
         {nearestLocation && nearestDistance !== null && (
           <p>O Ecoponto mais próximo é: {nearestLocation.name}, a {nearestDistance.toFixed(2)} km de distância.</p>
