@@ -1,0 +1,23 @@
+[
+    { "name": "Ecoponto Bairro de Fátima", "lat": -2.5192642099428086 , "lon": -44.2821651216706, "address": "Av. dos Africanos, 4058-4060 - Parque Amazonas, São Luís - MA, 65137-000" }, 
+    { "name": "Ecoponto São Cristovão", "lat": -2.548087486799899, "lon": -44.22669873521802, "address": "Ipem São Cristóvão, São Luís - MA, 65055-360" },
+    { "name": "Ecoponto Holandeses", "lat": -2.54231512055257, "lon": -44.22323124401033, "address": "Av. dos Holandeses, 100 - Calhau, São Luís - MA, 65071-380" },
+    { "name": "Ecoponto Jardim Renascença", "lat": -2.46617454201123, "lon": -44.28678085608136, "address": "Rua Netuno - Jardim Renascença, São Luís - MA, 65075-666" },
+    { "name": "Ecoponto Recanto do Vinhais", "lat": -2.49501505425685, "lon": -44.25905288914715, "address": "Rua 25 de Maio, 275-137 - Recanto Vinhais, São Luís - MA, 65074-380" },
+    { "name": "Ecoponto Residencial Esperança", "lat": -2.4984696364203254, "lon": -44.24518603786017, "address": "Conjunto Manoel Beckman, 30 - Residencial Esperança, São Luís - MA, 65060-972"},
+    { "name": "Ecoponto Angelim", "lat": -2.5088478958649976, "lon": -44.22900750847765, "address": "Rua 27, 334-452 - Angelim, São Luís - MA, 65066-620" },
+    { "name": "Ecoponto Cidade Operária", "lat": -2.535373256348417, "lon": -44.19433423132467, "address": "Cidade Operária, São Luís - MA, 65137-000" },
+    { "name": "Ecoponto Turu", "lat": -2.471909855657237, "lon": -44.22784652505781, "address": "Rua C, 118-226 - Jardim Eldorado, São Luís - MA, 65066-620"},
+    { "name": "Ecoponto Parque dos Nobres", "lat": -2.5296468158262475, "lon": -44.27407764854454, "address": "Parque dos Nobres, São Luís - MA, 65044-845" },
+    { "name": "Ecoponto São Francisco", "lat": -2.475421251144588, "lon": -44.31104485551084, "address": "Av. Ferreira Gullar - Jardim Sao Francisco, São Luís - MA" },
+    { "name": "Ecoponto Vila Isabel", "lat": -2.527359445056399, "lon": -44.32029156873002, "address": "Rua D, 19a - Anjo da Guarda, São Luís - MA, 65085-582"},
+    { "name": "Ecoponto Anil", "lat": -2.527321881822012, "lon": -44.24172179490288, "address": "R. Dois, 608-648 - João de Deus, São Luís - MA, 65064-340" },
+    { "name": "Ecoponto Mata Roma", "lat": -2.5653829804345203, "lon": -44.19780299335821, "address": "Cidade Operária, São Luís - MA, 65137-000" },
+    { "name": "Ecoponto Primavera", "lat": -2.5122839238850307, "lon": -44.18739625931132, "address": "Cohatrac III, São Luís - MA, 65137-000"},
+    { "name": "Ecoponto Cohab", "lat": -2.5215371150193033, "lon": -44.21745096010156, "address": "Av. Principal, S/N - Planalto Anil I, São Luís - MA, 65052-050" },
+    { "name": "Ecoponto Bequimão", "lat": -2.4984750284312587, "lon": -44.2544309823430454, "address": "Av. Um, 385-531 - Bequimão, São Luís - MA, 65062-190" },
+    { "name": "Ecoponto Itapiracó", "lat": -2.515752152382991, "lon": -44.19548857586737, "address": "Av. Joaquim Mochel - Itapiracó, São Luís - MA, 65050-145"},
+    { "name": "Ecoponto Cohaserma II", "lat": -2.477690663581582, "lon": -44.241716164060186, "address": "R. Quatorze - Parque Athenas, São Luís - MA, 65071-137" },
+    { "name": "Ecoponto Jardim América", "lat": -2.5653816958920435, "lon": -44.195491102298334, "address": "Cidade Operária, São Luís - MA, 65137-000" },
+    { "name": "Ecoponto Jordoa", "lat": -2.523874203727463, "lon": -44.269455358592204, "address": "R. Newton Filho, S/N - Jórdoa, São Luís - MA, 65041-050"}
+]

@@ -1,0 +1,58 @@
+.list-ecopontos {
+    width: 280px;
+    height: auto;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+
+    text-align: center;
+    
+    border: 1px solid var(--corTexto);
+    border-radius: 5px;
+
+    & h1 {
+        font-size: medium;
+        font-weight: bold;
+
+    }
+
+    
+    & button {
+        width: 150px;
+        height: 30px;
+
+        border: 1px solid var(--corTexto);
+        border-radius: 5px;
+
+        background-color: var(--corBotao);
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--corBotaoHover);
+            color: var(--corTextoHover);
+            font-weight: bold;
+        }
+
+    }
+
+    & div {
+        width: 250px;
+        height: auto;
+
+        border: 1px solid var(--corTexto);
+        border-radius: 5px;
+
+        & h3 {
+            font-size: medium;
+            font-weight: bold;
+        }
+
+    }
+
+
+}

@@ -1,0 +1,66 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    text-decoration: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+
+:root {
+
+   --corPrincipal: #d1972b;
+   --corFundo: #ffe8c8;
+   --corDestaques: #00640a;
+   --corBotao: rgb(21, 168, 21);
+   --corBotaoHover: rgb(9, 222, 76);
+   --corTexto: #0c0c0c;
+   --corTextoHover: #ffffff;
+}
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    background-color: var(--corFundo);
+
+    font-family: "Quicksand", serif;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100dvw;
+    height: 100dvh;
+
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1em;
+
+    min-width: 100dvw;
+    min-height: 100dvh;
+
+    padding-top: 2em;
+
+    
+}
