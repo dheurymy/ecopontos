@@ -8,23 +8,27 @@ const GetEcoponto = () => {
   const [nearestDistance, setNearestDistance] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [loadingMessage, setLoadingMessage] = useState('');
+  const [iframeContent, setIframeContent] = useState('');
+  const apiKey = process.env.REACT_APP_API_KEY_MAPS;
+  console.log(apiKey);
 
-  const calculateDistance = (lat1, lon1, lat2, lon2) => {
+  function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371; // Raio da Terra em km
     const dLat = (lat2 - lat1) * Math.PI / 180;
     const dLon = (lon2 - lon1) * Math.PI / 180;
     const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c;
-  };
+  }
 
   const findNearestLocation = () => {
     setLoadingMessage("Buscando o Ecoponto mais próximo...");
     setNearestLocation(null);
     setNearestDistance(null);
     setErrorMessage(null);
+    setIframeContent('');
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -45,6 +49,11 @@ const GetEcoponto = () => {
         setNearestLocation(nearestLoc);
         setNearestDistance(nearestDist);
         setLoadingMessage('');
+
+        // Gerar a rota e incorporar no iframe usando o nome do local
+        const routeUrl = `https://www.google.com/maps/embed/v1/directions?key=${apiKey}&origin=${userLat},${userLon}&destination=${nearestLoc.name}`;
+        const iframe = `<iframe  frameborder="0" style="border:0" src="${routeUrl}" allowfullscreen></iframe>`;
+        setIframeContent(iframe);
       }, error => {
         setErrorMessage("Não foi possível obter a localização do usuário.");
         setLoadingMessage('');
@@ -63,10 +72,13 @@ const GetEcoponto = () => {
         {loadingMessage && <p>
           {loadingMessage}
           <div className='loader'></div>
-          </p>}
+        </p>}
         {errorMessage && <p>{errorMessage}</p>}
         {nearestLocation && nearestDistance !== null && (
-          <p>O Ecoponto mais próximo é: {nearestLocation.name}, a {nearestDistance.toFixed(2)} km de distância.</p>
+          <div>
+            <p>O Ecoponto mais próximo é: {nearestLocation.name}, a {nearestDistance.toFixed(2)} km de distância.</p>
+            <div dangerouslySetInnerHTML={{ __html: iframeContent }} />
+          </div>
         )}
       </div>
       <Link to="/list"><button>Lista de Ecopontos</button></Link>

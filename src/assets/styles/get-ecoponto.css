@@ -59,3 +59,8 @@
     transform: rotate(360deg);
     }
 }
+
+iframe {
+    width: 280px;
+    height: 400px;
+}

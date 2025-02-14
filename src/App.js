@@ -9,8 +9,8 @@ const App = () => {
     
       <Router> {/* Componente de roteamento principal */}
         <div className="App">
-          <Header /> {/* Renderiza o componente Header */}
-          
+       
+          <Header /> {/* Componente de cabeçalho */}
           
           <Routes> {/* Define as rotas */}
             <Route path="/" element={<GetEcoponto />} /> {/* Rota para o componente GetEcoponto */}
