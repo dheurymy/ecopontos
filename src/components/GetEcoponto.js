@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import '../assets/styles/get-ecoponto.css';
 import locations from '../ecopontos.json';
 
@@ -92,7 +92,7 @@ const GetEcoponto = () => {
           </div>
         )}
       </div>
-      <Link to="/list"><button>Lista de Ecopontos</button></Link>
+
     </div>
   );
 }

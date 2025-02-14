@@ -12,7 +12,8 @@
     text-align: center;
     
     border: 1px solid var(--corTexto);
-    border-radius: 5px;
+    border-top: none;
+    border-radius: 0px 0px 5px 5px;
 
     & button {
         width: 150px;
@@ -68,8 +69,8 @@
     }
 
     & iframe {
-        width: 280px;
-        height: 400px;
+        width: 260px;
+        height: 350px;
 
         border-radius: 5px;
     }

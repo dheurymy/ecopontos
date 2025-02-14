@@ -6,6 +6,8 @@
 	font: inherit;
 	vertical-align: baseline;
     text-decoration: none;
+    box-sizing: border-box;
+    color: black;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
@@ -17,7 +19,8 @@
    --corPrincipal: #d1972b;
    --corFundo: #ffe8c8;
    --corDestaques: #00640a;
-   --corBotao: rgb(21, 168, 21);
+
+   --corBotao: #0B7E20;
    --corBotaoHover: rgb(9, 222, 76);
    --corBotaoMaps: #2328ae;
    --corTexto: #0c0c0c;
@@ -56,7 +59,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: 1em;
 
     min-width: 100dvw;
     min-height: 100dvh;

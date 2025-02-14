@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import '../assets/styles/list-ecopontos.css';
 import locations from '../ecopontos.json';
 
@@ -8,7 +8,6 @@ const ListEcopontos = () => {
     <div className='list-ecopontos'>
         <h1>Lista de Ecopontos</h1>
 
-        <Link to="/"><button>Buscar Ecopontos</button></Link>
 
         {locations.map(location => (
           <div  className='location'>
