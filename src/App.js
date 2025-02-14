@@ -2,12 +2,14 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'; // Im
 
 import GetEcoponto from './components/GetEcoponto';
 import ListEcopontos from './components/ListEcopontos';
+import Header from './components/Header';
 
 const App = () => { 
   return (
     
       <Router> {/* Componente de roteamento principal */}
         <div className="App">
+          <Header /> {/* Renderiza o componente Header */}
           
           
           <Routes> {/* Define as rotas */}
