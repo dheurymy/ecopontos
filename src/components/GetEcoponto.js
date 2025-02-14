@@ -9,8 +9,8 @@ const GetEcoponto = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [loadingMessage, setLoadingMessage] = useState('');
   const [iframeContent, setIframeContent] = useState('');
-  const apiKey = process.env.REACT_APP_API_KEY_MAPS;
-  console.log(apiKey);
+  const [userPosition, setUserPosition] = useState(null);
+  const apiKey = process.env.REACT_APP_API_KEY_MAPS; // Use a variável de ambiente
 
   function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371; // Raio da Terra em km
@@ -34,6 +34,7 @@ const GetEcoponto = () => {
       navigator.geolocation.getCurrentPosition(position => {
         const userLat = position.coords.latitude;
         const userLon = position.coords.longitude;
+        setUserPosition({ lat: userLat, lon: userLon });
 
         let nearestLoc = null;
         let nearestDist = Infinity;
@@ -64,6 +65,14 @@ const GetEcoponto = () => {
     }
   };
 
+  const openGoogleMaps = () => {
+    if (nearestLocation && userPosition) {
+      const { lat: userLat, lon: userLon } = userPosition;
+      const routeUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLon}&destination=${nearestLocation.name}`;
+      window.open(routeUrl, '_blank');
+    }
+  };
+
   return (
     <div className='get-ecoponto'>
       <h1>Encontre o Ecoponto<br />mais próximo de você:</h1>
@@ -75,9 +84,11 @@ const GetEcoponto = () => {
         </p>}
         {errorMessage && <p>{errorMessage}</p>}
         {nearestLocation && nearestDistance !== null && (
-          <div>
+          <div className='ecoponto-details'>
             <p>O Ecoponto mais próximo é: {nearestLocation.name}, a {nearestDistance.toFixed(2)} km de distância.</p>
+            
             <div dangerouslySetInnerHTML={{ __html: iframeContent }} />
+            <button className='open-maps' onClick={openGoogleMaps}>Abrir no Google Maps</button>
           </div>
         )}
       </div>
@@ -87,3 +98,4 @@ const GetEcoponto = () => {
 }
 
 export default GetEcoponto;
+
