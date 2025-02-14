@@ -16,44 +16,85 @@
     border-top: none;
     border-radius: 0px 0px 5px 5px;
 
-    & h1 {
-        font-size: medium;
-        font-weight: bold;
 
-    }
-
-    
-    & button {
-        width: 150px;
-        height: 30px;
+    & .location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
 
         border: 1px solid var(--corTexto);
         border-radius: 5px;
 
-        background-color: var(--corBotao);
-
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--corBotaoHover);
-            color: var(--corTextoHover);
-            font-weight: bold;
-        }
-
-    }
-
-    & div {
-        width: 250px;
-        height: auto;
-
-        border: 1px solid var(--corTexto);
-        border-radius: 5px;
+        background-color: var(--corFundoDestaque);
 
         & h3 {
-            font-size: medium;
-            font-weight: bold;
+            width: 100%;
+            height: auto;
+
+            background-color: var(--corBotaoHover);
+
+            color: var(--corTexto);
+            font-weight: 900;
+
+            border-bottom: 1px solid var(--corTexto);
+            border-radius: 5px 5px 0px 0px;
         }
 
+        & .location-details {
+            width: 100%;
+            height: auto;
+            padding: 3px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            & h6 {
+                width: 100%;
+                height: auto;
+
+                font-size: smaller;
+                font-weight: 600;
+
+                text-align: left;
+            }
+
+            & button {
+                width: 150px;
+                height: 30px;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+
+                font-weight: 700;
+
+
+                border: 1px solid var(--corTexto);
+                border-radius: 5px;
+
+                background-color: var(--corBotaoMaps);
+
+                cursor: pointer;
+
+                & img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+
+            & button:hover {
+                background-color: var(--corBotaoHover);
+            }
+
+           
+        }
     }
 
 

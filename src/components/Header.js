@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <div className='header'>
-      <img src={HeaderImage} alt='Leva Pro Ecoponto'  />
+      <Link to="/"><img src={HeaderImage} alt='Leva Pro Ecoponto'  /></Link>
       <nav>
         <Link 
           to="/" 

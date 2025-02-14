@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-
 import '../assets/styles/get-ecoponto.css';
 import locations from '../ecopontos.json';
+import LocationArrow from '../assets/images/location-arrow.svg';
 
 const GetEcoponto = () => {
   const [nearestLocation, setNearestLocation] = useState(null);
   const [nearestDistance, setNearestDistance] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [loadingMessage, setLoadingMessage] = useState('');
+  const [buttonText, setButtonText] = useState('Buscar Ecoponto');
   const [iframeContent, setIframeContent] = useState('');
   const [userPosition, setUserPosition] = useState(null);
-  const apiKey = process.env.REACT_APP_API_KEY_MAPS; // Use a variável de ambiente
+  const apiKey = process.env.REACT_APP_API_KEY_MAPS;
 
   function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371; // Raio da Terra em km
@@ -24,11 +25,12 @@ const GetEcoponto = () => {
   }
 
   const findNearestLocation = () => {
-    setLoadingMessage("Buscando o Ecoponto mais próximo...");
+    setLoadingMessage("");
     setNearestLocation(null);
     setNearestDistance(null);
     setErrorMessage(null);
     setIframeContent('');
+    setButtonText('Buscando...');
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -50,18 +52,20 @@ const GetEcoponto = () => {
         setNearestLocation(nearestLoc);
         setNearestDistance(nearestDist);
         setLoadingMessage('');
+        setButtonText('Buscar Ecoponto');
 
-        // Gerar a rota e incorporar no iframe usando o nome do local
         const routeUrl = `https://www.google.com/maps/embed/v1/directions?key=${apiKey}&origin=${userLat},${userLon}&destination=${nearestLoc.name}`;
-        const iframe = `<iframe  frameborder="0" style="border:0" src="${routeUrl}" allowfullscreen></iframe>`;
+        const iframe = `<iframe   src="${routeUrl}" allowfullscreen></iframe>`;
         setIframeContent(iframe);
       }, error => {
         setErrorMessage("Não foi possível obter a localização do usuário.");
         setLoadingMessage('');
+        setButtonText('Buscar Ecoponto');
       });
     } else {
       setErrorMessage("Geolocalização não é suportada pelo navegador.");
       setLoadingMessage('');
+      setButtonText('Buscar Ecoponto');
     }
   };
 
@@ -76,7 +80,10 @@ const GetEcoponto = () => {
   return (
     <div className='get-ecoponto'>
       <h1>Encontre o Ecoponto<br />mais próximo de você:</h1>
-      <button onClick={findNearestLocation}>Buscar Ecoponto</button>
+      <button onClick={findNearestLocation}>
+        {buttonText === 'Buscando...' && <span className="spinner"></span>}
+        {buttonText}
+      </button>
       <div className='ecoponto-info'>
         {loadingMessage && <p>
           {loadingMessage}
@@ -85,17 +92,21 @@ const GetEcoponto = () => {
         {errorMessage && <p>{errorMessage}</p>}
         {nearestLocation && nearestDistance !== null && (
           <div className='ecoponto-details'>
-            <p>O Ecoponto mais próximo é: {nearestLocation.name}, a {nearestDistance.toFixed(2)} km de distância.</p>
+            <p>O Ecoponto mais próximo é: 
+              <br></br>
+              {nearestLocation.name}.
+            </p>
             
             <div dangerouslySetInnerHTML={{ __html: iframeContent }} />
-            <button className='open-maps' onClick={openGoogleMaps}>Abrir no Google Maps</button>
+            <button className='open-maps' onClick={openGoogleMaps}>
+              Ver no Mapa
+              <img src={LocationArrow} alt='Abrir no Google Maps' />
+            </button>
           </div>
         )}
       </div>
-
     </div>
   );
 }
 
 export default GetEcoponto;
-

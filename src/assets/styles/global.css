@@ -16,13 +16,13 @@
 
 :root {
 
-   --corPrincipal: #d1972b;
+   --corFundoDestaque: #ecc67e;
    --corFundo: #ffe8c8;
    --corDestaques: #00640a;
 
    --corBotao: #0B7E20;
    --corBotaoHover: rgb(9, 222, 76);
-   --corBotaoMaps: #2328ae;
+   --corBotaoMaps: #d4ef4e;
    --corTexto: #0c0c0c;
    --corTextoHover: #ffffff;
 }
