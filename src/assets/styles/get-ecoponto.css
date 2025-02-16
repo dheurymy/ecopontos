@@ -26,6 +26,8 @@
 
         cursor: pointer;
 
+        font-weight: 700;
+
         &:hover {
             background-color: var(--corBotaoHover);
             color: var(--corTextoHover);
