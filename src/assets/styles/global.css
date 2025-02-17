@@ -52,6 +52,8 @@ body {
     width: 100dvw;
     height: 100dvh;
 
+   
+
 }
 
 .App {
@@ -63,7 +65,8 @@ body {
     min-width: 100dvw;
     min-height: 100dvh;
 
-    padding-top: 2em;
+    padding-top: 1em;
+
 
     
 }

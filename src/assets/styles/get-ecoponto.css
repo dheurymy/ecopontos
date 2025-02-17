@@ -92,10 +92,70 @@
 
     & iframe {
         width: 260px;
-        height: 350px;
+        height: 300px;
 
         border: 1px solid var(--corTexto);
         border-radius: 5px;
+    }
+
+    & .ecoponto-text {
+        width: 98%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        border: 1px solid var(--corTexto);
+        border-radius: 5px;
+
+        
+
+        background-color: var(--corFundoDestaque);
+
+        & h3 {
+            width: 100%;
+            
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            gap: 5px;
+
+            background-color: var(--corBotaoHover);
+
+            border-radius: 5px 5px 0px 0px;
+            border-bottom: 1px solid var(--corTexto);
+
+            font-size: 12px;
+            font-weight: bolder;
+
+            padding: 3px;
+
+            
+
+           & img {
+            width: 20px;
+            height: 20px;
+           }
+        }
+
+        & p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            font-size: small;
+            text-align: justify;
+
+            padding: 5px;
+
+        }
+
     }
 }
     
@@ -116,3 +176,4 @@
     margin-right: 8px;
   }
   
+

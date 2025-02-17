@@ -35,6 +35,7 @@ const Header = () => {
               <br></br>
               + PRÓXIMO
             </p>
+            
         </Link>
         <Link 
           to="/list" 
@@ -46,6 +47,7 @@ const Header = () => {
               <br></br>
               ECOPONTOS
           </p>
+          
         </Link>
       </nav>
     </div>
