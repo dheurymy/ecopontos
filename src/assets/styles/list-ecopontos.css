@@ -63,6 +63,10 @@
                 text-align: left;
             }
 
+            & p {
+                min-height: 60px;
+            }
+
             & button {
                 width: 150px;
                 height: 30px;
@@ -98,4 +102,33 @@
     }
 
 
+}
+
+@media screen and (min-width: 600px) {
+    .list-ecopontos {
+        width: 95%;
+        max-width: 850px;
+        
+            
+            
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        & .location {
+            width: 260px;
+            height: 150px;
+
+            justify-content: start;
+
+            & .location-details {
+                
+            }
+        }
+    
+    }
 }
