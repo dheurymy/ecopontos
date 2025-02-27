@@ -3,6 +3,8 @@ import '../assets/styles/get-ecoponto.css';
 import locations from '../ecopontos.json';
 import LocationArrow from '../assets/images/location-arrow.svg';
 import RecycleLogo from '../assets/images/recycle.svg';
+import Ecoponto from '../assets/images/ecoponto.jpeg';
+import Lixo from '../assets/images/lixo.jpg';
 
 const GetEcoponto = () => {
   const [nearestLocation, setNearestLocation] = useState(null);
@@ -117,7 +119,8 @@ const GetEcoponto = () => {
               O que é um Ecoponto?
             </h3>
             <p>"Os Ecopontos são pontos de entrega voluntária de pequenos volumes de resíduos recicláveis volumosos, distribuídos por diversos bairros de São Luís e região, estimulando a responsabilidade dos cidadãos com a correta destinação dos resíduos sólidos que produzem em casa ou com pequenas reformas."</p>
-           </div>
+            <img src={Ecoponto} alt='Ecoponto' />
+          </div>
         </div>
         <div className='ecoponto-text'>
           <div className='ecoponto-text-info'>
@@ -136,6 +139,7 @@ const GetEcoponto = () => {
               O que eles podem receber?
             </h3>
             <p>"Os Ecopontos podem receber eletrônicos (televisão, monitores, impressoras, mouses, teclados, etc.), entulho (resíduos de construção civil, como tijolos, telhas, gessos, etc.), madeiras, óleo de cozinha, pneus, poda de árvore, resto de capina e móveis (sofás, colçhões, etc.) ."</p>
+            <img src={Lixo} alt='Lixo' />
            </div>
         </div>
         

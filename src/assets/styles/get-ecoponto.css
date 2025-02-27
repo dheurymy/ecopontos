@@ -155,8 +155,16 @@
             padding: 5px;
 
         }
+        & img {
+            width: 240px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        
 
     }
+    
 }
     
 @keyframes spin {
@@ -175,5 +183,7 @@
     vertical-align: middle;
     margin-right: 8px;
   }
+
+ 
   
 
