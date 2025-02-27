@@ -38,6 +38,7 @@ const GetEcoponto = () => {
         const userLat = position.coords.latitude;
         const userLon = position.coords.longitude;
         setUserPosition({ lat: userLat, lon: userLon });
+        console.log(userPosition);
 
         let nearestLoc = null;
         let nearestDist = Infinity;
