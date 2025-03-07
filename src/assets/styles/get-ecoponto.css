@@ -184,6 +184,37 @@
     margin-right: 8px;
   }
 
- 
+  @media screen and (min-width: 600px) {
+    .get-ecoponto {
+        width: 95%;
+        max-width: 850px;
+        
+            
+            
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        & .ecoponto-search {
+            width: 400px;
+            gap: 5em;
+
+            & .ecoponto-details {
+                gap: 1em;
+            }
+        }
+
+        & .ecoponto-text {
+            width: 400px;
+        }
+
+
+    
+    }
+}
   
 

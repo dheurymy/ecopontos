@@ -83,34 +83,35 @@ const GetEcoponto = () => {
 
   return (
       <div className='get-ecoponto'>
-        <h1>Encontre o Ecoponto<br />mais próximo de você:</h1>
-        <button onClick={findNearestLocation}>
-          {buttonText === 'Buscando...' && <span className="spinner"></span>}
-          {buttonText} 
-         
-        </button>
-        <div className='ecoponto-info'>
-          {loadingMessage && <p>
-            {loadingMessage}
-            <div className='loader'></div>
-          </p>}
-          {errorMessage && <p>{errorMessage}</p>}
-          {nearestLocation && nearestDistance !== null && (
-            <div className='ecoponto-details'>
-              <p>O Ecoponto mais próximo é: 
-                <br></br>
-                {nearestLocation.name}.
-              </p>
-              
-              <div dangerouslySetInnerHTML={{ __html: iframeContent }} />
-              <button className='open-maps' onClick={openGoogleMaps}>
-                Ver no Mapa
-                <img src={LocationArrow} alt='Abrir no Google Maps' />
-              </button>
-
-              
-            </div>
-          )}
+        <div className='ecoponto-search'>
+          <h1>Encontre o Ecoponto<br />mais próximo de você:</h1>
+          <button onClick={findNearestLocation}>
+            {buttonText === 'Buscando...' && <span className="spinner"></span>}
+            {buttonText}
+          
+          </button>
+          <div className='ecoponto-info'>
+            {loadingMessage && <p>
+              {loadingMessage}
+              <div className='loader'></div>
+            </p>}
+            {errorMessage && <p>{errorMessage}</p>}
+            {nearestLocation && nearestDistance !== null && (
+              <div className='ecoponto-details'>
+                <p>O Ecoponto mais próximo é:
+                  <br></br>
+                  {nearestLocation.name}.
+                </p>
+          
+                <div dangerouslySetInnerHTML={{ __html: iframeContent }} />
+                <button className='open-maps' onClick={openGoogleMaps}>
+                  Ver no Mapa
+                  <img src={LocationArrow} alt='Abrir no Google Maps' />
+                </button>
+          
+              </div>
+            )}
+          </div>
         </div>
         <div className='ecoponto-text'>
           <div className='ecoponto-text-info'>
@@ -122,15 +123,7 @@ const GetEcoponto = () => {
             <img src={Ecoponto} alt='Ecoponto' />
           </div>
         </div>
-        <div className='ecoponto-text'>
-          <div className='ecoponto-text-info'>
-            <h3>
-              <img src={RecycleLogo} alt='Simbolo de reciclagem' />
-              Qual o horário de funcionamento?
-            </h3>
-            <p>"Os Ecopontos de São Luís e região funcionam de segunda-feira a sábado, das 7h às 19h."</p>
-           </div>
-        </div>
+        
 
         <div className='ecoponto-text'>
           <div className='ecoponto-text-info'>
@@ -140,6 +133,15 @@ const GetEcoponto = () => {
             </h3>
             <p>"Os Ecopontos podem receber eletrônicos (televisão, monitores, impressoras, mouses, teclados, etc.), entulho (resíduos de construção civil, como tijolos, telhas, gessos, etc.), madeiras, óleo de cozinha, pneus, poda de árvore, resto de capina e móveis (sofás, colçhões, etc.) ."</p>
             <img src={Lixo} alt='Lixo' />
+           </div>
+        </div>
+        <div className='ecoponto-text'>
+          <div className='ecoponto-text-info'>
+            <h3>
+              <img src={RecycleLogo} alt='Simbolo de reciclagem' />
+              Qual o horário de funcionamento?
+            </h3>
+            <p>"Os Ecopontos de São Luís e região funcionam de segunda-feira a sábado, das 7h às 19h."</p>
            </div>
         </div>
         
